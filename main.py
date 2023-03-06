@@ -22,7 +22,8 @@ async def root(file: UploadFile = File(...),q: str = None):
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO test_javoblari (rasm, uzunligi,boyi,rangi) VALUES (%s, %s, %s, %s)"
-    rasm=path
+    rasm=file.filename
+  
     uzunligi=q[0]
     boyi=q[1]
     rangi=q[2]
